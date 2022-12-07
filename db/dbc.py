@@ -7,7 +7,7 @@ class DataBaseConnection:
         self.connect()
 
     def connect(self) -> None:
-        self.sqliteConnection = sqlite3.connect('./db/test.db')
+        self.sqliteConnection = sqlite3.connect(self.file)
         # choosing to keep the connection opne 
         self.cursor = self.sqliteConnection.cursor()
 
