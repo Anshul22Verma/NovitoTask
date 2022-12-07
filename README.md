@@ -70,7 +70,7 @@ You might need `sudo` if you do not access to this port.
 
 ### 4. How to call your API endpoint to read the database and show the result of your route(s). Document your route(s).
 
-Example is shown in `inference/demo.py` you can make CURL request with POST to get responses for your needs.
+Example is shown in `inference/demo.py` you can make CURL request with POST to get responses for your needs. Run it while running the app locally and change the IP to the server's IP is hosting it in a IP and allow the inbound traffic to be able to make these requests and recieve a response.
 
 I have created two APIs for querying and one for information
 i) just run `<host>:80` -> to get information about the app
