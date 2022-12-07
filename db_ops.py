@@ -57,9 +57,9 @@ def insert_data_to_db(csv_file: str, db_file: str) -> None:
             query = f"INSERT INTO metric(code,description) VALUES('{metric_code}','{metric_desc}');"
             dbc.query(query=query)
 
-            # get the id of these rows for them to be foriegn key of the value table
-            query = f"SELECT id FROM metric WHERE code='{metric_code}'"
-            ids[metric_code] = dbc.query(query=query)[0][0]
+        # get the id of these rows for them to be foriegn key of the value table
+        query = f"SELECT id FROM metric WHERE code='{metric_code}'"
+        ids[metric_code] = dbc.query(query=query)[0][0]
 
     # insert into values_defintion table
     for _, row in df.iterrows():
