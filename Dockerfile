@@ -25,7 +25,6 @@ ENV PYTHONPATH "${PYTHONPATH}:/code"
 # upgrade and install the requirements
 RUN pip3 install --no-cache-dir -Ur requirements.txt
 
-WORKDIR /code/inference
 # Envioronment variables
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
@@ -34,6 +33,6 @@ ENV LANG=C.UTF-8
 EXPOSE 80
 
 # Start the app, the prediction is being made in GPU and its using an instance with one GPU only
-CMD ["gunicorn", "-b", "0.0.0.0:80", "app:app", "--workers", "1", "-k", "uvicorn.workers.UvicornWorker"]
+CMD ["gunicorn", "-b", "0.0.0.0:80", "inference.app:app", "--workers", "1", "-k", "uvicorn.workers.UvicornWorker"]
 
 # To handle in multiple requests I hosted the ECR in ECS using fargate
