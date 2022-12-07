@@ -1,0 +1,7 @@
+argparse
+fastapi
+gunicorn
+pandas
+pydantic
+pysqlite3
+uvicorn
