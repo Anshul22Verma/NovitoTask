@@ -98,4 +98,9 @@ Output after running `./inference/demo.py`
 
 The project contains a Dockerfile which was used to create the docker image in **AWS ECR** and then this **ECR** was hosted in **ECS** using **fargate**
 
+ Docker related commands: 
 
+1. To create a docker image, run `docker build -t novito .`
+2. To host the docker in the instance rather than pushing it to ECR and using ECS to deploy, run `docker run -p 80:80 --cpus 2 novito`
+
+3. To deploy it using ECR and ECS fargate we can just use the AWS console, and CLI to create the ECR and then host using the ECS. ref: [AWS ref](https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-ecs-ecr-codedeploy.html)
