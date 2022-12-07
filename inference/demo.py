@@ -2,7 +2,7 @@ import os
 
 if __name__ == "__main__":
     # sanity check 
-    #os.system('curl http://100.26.248.168:80/')
+    # os.system('curl http://100.26.248.168:80/')
     os.system('curl http://0.0.0.0:80/')
     print("\n")
 
